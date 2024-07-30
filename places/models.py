@@ -15,7 +15,7 @@ class Place(models.Model):
 
 class PlaceImage(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, related_name="images")
-    image = models.ImageField("Изображения", upload_to="media")
+    image = models.ImageField("Изображения", upload_to="media", blank=True, null=True)
 
     def __str__(self):
         return f"{self.place.id} {self.place.title}"
